@@ -10,31 +10,17 @@ void input_line(float *x1, float *y1,float *x2,float *y2,float *x3,float *y3)
   scanf("%f %f",x3,y3);
 }
 
-float find_distance(float x1, float y1, float x2, float y2)
-{
-  float a,b;
-  a=(x2-x1)*(x2-x1);
-  b=(y2-y1)*(y2-y1);
-  return sqrtf(a+b);
-}
 int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3)
 {
-  float a,b,c;
-  int istriangle=-1;
-  a=find_distance(x1,y1,x2,y2);
-  b=find_distance(x2,y2,x3,y3);
-  c=find_distance(x3,y3,x1,x2);
-  if((a+b)>c&&(b+c)>a&&(c+a)>b)
-  {
-    istriangle=1;
-  }
-  return istriangle;
+  float area;
+  area=0.5*(x1*(y2-y3)+x2*(y3-y1)+x3*(y2-y1);
+  return area;
 }
 void output(float x1, float y1, float x2, float y2,float x3, float y3, int istri)
 {
-  if(istri==1)
+  if(istri!=0)
     printf("(%.1f,%.1f),(%.1f,%.1f),(%.1f,%.1f) are the coordinates of a triangle",x1,y1,x2,y2,x3,y3);
-  else if(istri==-1)
+  else if(istri==0)
     printf("The coordinates do not form a triangle.");
 }
 int main()
