@@ -10,7 +10,6 @@ int str_reverse(char *string,char *substring)
   int k;
   printf("Enter the substring to be found:- ");
   scanf("%s",substring);
-  printf("%s && %s\n",substring,string);
   char *i=strstr(string,substring);
   k=i-string;
   return k;
